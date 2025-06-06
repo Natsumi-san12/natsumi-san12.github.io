@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Bergerak</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="https://www.instagram.com/_rimuz_san/?hl=en" style="padding-left: 20px;">Natsumi</a>
+    <a class="navbar-brand " href="https://hsr.hoyoverse.com/en-us/home" style="padding-left: 20px;">Official Site</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#hsr">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#character">Character</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#team">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Download">Download</a>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center" style="padding-right: 20px;">
+        <button class="btn btn-link p-1 me-2" onclick="document.getElementById('audioPlayer').play()">
+          <img src="volume-up.png" loop width="20px" style="filter: invert();" alt="Play Audio">
+        </button>
+        <button class="btn btn-link p-1" onclick="document.getElementById('audioPlayer').pause()">
+          <img src="volume-off-indicator.png" width="20px" style="filter: invert();" alt="Pause Audio">
+        </button>
+        <audio id="audioPlayer"></audio>
+
+        <button id="prevBtn">
+          <img src="https://cdn-icons-png.flaticon.com/512/15948/15948868.png" alt="Prev" width="30" style="filter: invert();">
+        </button>
+        <button id="nextBtn">
+          <img src="https://cdn-icons-png.flaticon.com/512/15948/15948868.png" alt="Next" width="30" style="filter: invert(); transform: scaleX(-1);">
+        </button>
+
+        <script>
+          const playlist = [
+            "Honkai- Star Rail EP- Proi Proi.mp3",
+            "Expert Tutorial.mp3",
+            "Got a Date..mp3",
+            "A Dramatic Irony.mp3"
+          ];
+          let currentIndex = 0;
+          const audio = document.getElementById("audioPlayer");
+
+          function loadSong(index) {
+            if (index < 0) index = playlist.length - 1;
+            if (index >= playlist.length) index = 0;
+            currentIndex = index;
+            audio.src = playlist[currentIndex];
+            audio.play();
+          }
+
+          document.getElementById("prevBtn").addEventListener("click", () => {
+            loadSong(currentIndex - 1);
+          });
+
+          document.getElementById("nextBtn").addEventListener("click", () => {
+            loadSong(currentIndex + 1);
+          });
+
+          audio.addEventListener("ended", () => {
+            loadSong(currentIndex + 1);
+          });
+
+          // mulai dengan lagu pertama
+          loadSong(currentIndex);
+        </script>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="container-fluid banner" id="home">
+    <video class="video-background" autoplay loop muted playsinline>
+        <source src="astral-express-honkai-star-rail-moewalls-com.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container text">
+        <h1 class="display-6"><b>Welcome To My Website</b></h1>
+        <h1 class="display-1">Featuring Honkai Star Rail</h1>
+        <a href="#hsr">
+            <button type="button" class="btn btn-secondary btn-lg">Check </button>
+        </a>
+    </div>
+</div>
+
+  
+  
+
+  
+  <div class="container-fluid info d-flex align-items-center justify-content-center pt-4 pb-3" id="hsr">
+  <div class="container position-relative content-wrapper text-center">
+    <h1 class="display-3 text-center">Honkai Star Rail</h1>
+    <div class="pt-4">
+      <img 
+        src="https://fastcdn.hoyoverse.com/mi18n/resource-trans/upload/event/2022/03/30/353aa745f17c0f96671bd438a309e533_1404457081996107753.png" 
+        class="mb-3 crop-img" 
+        alt="Honkai Star Rail Image"
+      />
+      <p><b>Honkai: Star Rail</b> is a free-to-play, turn-based role-playing game developed and published by miHoYo Co., Ltd. Outside of the Chinese Mainland, the publisher is miHoYo's subsidiary, Cognosphere Pte., Ltd. d/b/a HoYoverse.</p>
+      <p>The game has a space-themed limited open world environment and turn-based combat system, with a gacha monetization system for players to obtain Characters, Light Cones, and other resources. The game can only be played with an internet connection.</p>
+      <p>It is the fourth installment in the <i>Honkai</i> series, following <i>Honkai Impact 3rd</i>, and uses both new characters and alternate versions of existing characters from its predecessors.</p>
+      <p>The game released worldwide on April 26, 2023, for iOS, Android, and Microsoft Windows. It released for PlayStation 5 on October 11th, 2023 globally.</p>
+    </div>
+  </div>
+</div>
+
+<div style="background: url(pc-normal-bg.3870807.png) center center / cover no-repeat; padding: 100px 0;" id="character">
+<div class="container py-5 chara text-white">
+  <h1 class="text-center mb-5 text-white">Honkai: Star Rail Character Each Faction</h1>
+
+  <h2 class="mb-3 text-center">Trailblazer</h2>
+<div id="carouselTrailblazer" class="carousel slide mb-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselTrailblazer" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselTrailblazer" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+
+  <div class="carousel-inner">
+    
+    <div class="carousel-item active text-center">
+      <img src="Character_Trailblazer_29_Destruction_Splash_Art.webp" class="d-block w-100" alt="Stelle">
+      <h5 style="padding: 20px;">Stelle
+        <p>Trailblazer (Female)</p>
+      </h5>
+    </div>
+
+    
+    <div class="carousel-item text-center">
+      <img src="Character_Trailblazer_29_Destruction_Splash_Art1.webp" class="d-block w-100" alt="Caelus">
+      <h5 style="padding: 20px;">Caelus 
+        <p>Trailblazer (Male)</p></h5>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselTrailblazer" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselTrailblazer" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+  <h2 class="mb-3 text-center">Stellaron Hunters</h2>
+  <div id="carouselStellaron" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselStellaron" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#carouselStellaron" data-bs-slide-to="1"></button>
+    </div>
+    <div class="carousel-inner" style="padding: 20px;">
+      <div class="carousel-item active">
+        <div class="row text-center">
+          <div class="col-md-6">
+            <img src="https://webstatic.hoyoverse.com/upload/op-public/2022/04/11/d9ab700ee0713acf78eb04d930f5c3fc_4622587084501383915.png" class="d-block w-100" alt="Kafka">
+            <h5 class="mt-2">Kafka</h5>
+            <p>On the Interastral Peace Corporation's wanted list, Kafka's entry only has two things — her name, and a single sentence: "Likes collecting coats."</p>
+          </div>
+          <div class="col-md-6">
+            <img src="https://webstatic.hoyoverse.com/upload/op-public/2022/04/11/72d6e7d3bd7dd99d9c77141aec062999_6026974045289873224.png" class="d-block w-100" alt="Silver Wolf">
+            <h5 class="mt-2">Silver Wolf</h5>
+            <p>The universe is just another game to this super hacker.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row text-center">
+          <div class="col-md-6">
+            <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/123957/8f37dbc91598d1eebdadca8e9d22a6f6_6237269238409818844.png" class="d-block w-100" alt="Sam">
+            <h5 class="mt-2">FireFly</h5>
+            <p>A young lady who is a member of the Stellaron Hunters and wearer of the SAM mechanized armor.</p>
+          </div>
+          <div class="col-md-6">
+            <img src="https://webstatic.hoyoverse.com/upload/op-public/2023/07/18/e54575501d95b7e94b3707fd013a96f4_1799829791872313701.png" class="d-block w-100" alt="Blade">
+            <h5 class="mt-2">Blade</h5>
+            <p>A swordsman who abandoned his body to become a blade. Birth name unknown.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselStellaron" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselStellaron" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <h2 class="mb-3 text-center">The Xianzhou Luofu</h2>
+  <div id="carouselXianzhou" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselXianzhou" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#carouselXianzhou" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#carouselXianzhou" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner" style="padding: 20px;">
+      <div class="carousel-item active">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/127090/6ad02135678255fee6d4a6afc4475bb4_4853133216752168331.png" class="d-block w-100" alt="Dan Heng IL">
+            <h5 class="mt-2">Fugue</h5>
+            <p>The former chief representative of the Whistling Flames merchant guild in the Sky-Faring Commission</p>
+          </div>
+          <div class="col-md-4">
+            <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/125609/7d59520ad1ce7d0b741f1fa06ff201b4_3486332773273258063.png" class="d-block w-100" alt="Jing Yuan">
+            <h5 class="mt-2">Feixiao</h5>
+            <p>The Xianzhou Yaoqing's Merlin's Claw and one of the Seven Arbiter-Generals.</p>
+          </div>
+            <div class="col-md-4">
+            <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/125610/919a9d47f033fde37dd6aae36e77aa72_8633682211537180049.png" class="d-block w-100" alt="Blade">
+            <h5 class="mt-2">Lingsha</h5>
+            <p>The new Cauldron Master of the Xianzhou Luofu's Alchemy Commission. An intelligent and quick-witted Vidyadhara healer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/113257/908bbf00b100be952a54bdffeeefab84_332743845557554874.png" class="d-block w-100" alt="Sam">
+            <h5 class="mt-2">Jingliuy</h5>
+            <p>One of the legendary heroes making up the High-Cloud Quintet</p>
+          </div>
+          <div class="col-md-4">
+            <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/113549/750f02527721ee6d47d39d7f18d41490_3729511778385396642.png" class="d-block w-100" alt="Blade">
+            <h5 class="mt-2">HuoHuo</h5>
+            <p>While this Foxian girl may seem fragile and weak, she is actually a judge-in-training of the Ten-Lords Commission</p>
+          </div>
+          <div class="col-md-4">
+            <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/124840/d761fb65a9320aeae48aa5136f0399a3_6936870954886676372.png" class="d-block w-100" alt="Blade">
+            <h5 class="mt-2">Jiaoqiu</h5>
+            <p>A foxian healer and counselor from the Xianzhou Yaoqing. Often greets people with a smile on his face and a scheme in his heart.</p>
+          </div>
+        </div>
+      </div>
+       <div class="carousel-item">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/124839/e9ada73956acf24172f96f6967ba708a_2720680749177910797.png" class="d-block w-100" alt="Sam">
+            <h5 class="mt-2">Yunli</h5>
+            <p>A sword hunter from the Xianzhou Zhuming and "the Flaming Heart" General Huaiyan's darling granddaughter.</p>
+          </div>
+          <div class="col-md-4">
+            <img src="https://webstatic.hoyoverse.com/upload/op-public/2023/08/28/35f7231fce35b5f4ca665551f5523291_71931826496766719.png" class="d-block w-100" alt="Blade">
+            <h5 class="mt-2">Fu Xuan</h5>
+            <p>The head of the Xianzhou Luofu's Divination Commission and a confident</p>
+          </div>
+          <div class="col-md-4">
+            <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/112751/354f8490f3e1f514425d9496d5c76506_8916209661216232601.png" class="d-block w-100" alt="Blade">
+            <h5 class="mt-2">Dan Heng</h5>
+            <p>Dan Heng's true Vidyadhara form, revealed after accepting the residual powers from the previous reincarnation of "Imbibitor Lunae."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselXianzhou" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselXianzhou" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+</div>
+</div>
+
+<!-- Tombol Toggle -->
+<button id="toggleBtn">
+  ☰
+</button>
+
+<!-- Bar Sosial -->
+<div id="socialBar">
+  <a href="https://x.com/honkaistarrail" title="Twitter" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png" alt="Twitter">
+  </a>
+  <a href="https://www.youtube.com/channel/UC2PeMPA8PAOp-bynLoCeMLA" title="Youtube" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384028.png" alt="YouTube">
+  </a>
+  <a href="https://www.instagram.com/honkaistarrail/" title="Instagram" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/717/717392.png" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/HonkaiStarRail/" title="Facebook" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/20/20837.png" alt="Facebook">
+  </a>
+  <a href="https://www.tiktok.com/@honkaistarrail_official" title="TikTok" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok">
+  </a>
+  <a href="https://discord.com/invite/honkaistarrail" title="Discord" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968898.png" alt="Discord">
+  </a>
+</div>
+
+<script>
+  let isOpen = true;
+
+  function toggleSocialBar() {
+    const bar = document.getElementById("socialBar");
+    if (isOpen) {
+      bar.style.right = "-100px";
+    } else {
+      bar.style.right = "35px";
+    }
+    isOpen = !isOpen;
+  }
+
+  document.getElementById("toggleBtn").addEventListener("click", toggleSocialBar);
+</script>
+
+<div id="team-wrapper">
+  <!-- Gambar kiri dan kanan -->
+  <img src="Stelle_Harmony.webp" class="side-image side-left" alt="Left Image">
+  <img src="Caelus_Harmony (1).webp" class="side-image side-right" alt="Right Image">
+
+<div class="container-fluid" id="team">
+  <h3 class="display-3 text-center"><b>Team Comp</b></h3>
+  <div class="container text-center">
+    
+    <h1><b>Super Break</b></h1>
+    <div class="row pt-4 gx-4 gy-4 justify-content-center">
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/8/84/Character_Rappa_Icon.png" alt="Rappa">
+        <h4>Rappa</h4>
+        <p>Erudition</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/5/53/Path_Erudition.png" alt="Rappa">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/126410/e8f2d4eb8f601ce234c622eac5bd292e_9218430078378557320.png" alt="Rappa">
+      </div>
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/c/c0/Character_Fugue_Icon.png" alt="fugue">
+        <h4>Fugue</h4>
+        <p>Nihility</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/4/45/Path_Nihility.png" alt="Fugue">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/127090/d70a3ccff4ec2e198aa18c7e824a37a7_2854421928088961642.png" alt="fugue">
+      </div>
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/1/16/Character_Ruan_Mei_Icon.png" alt="Ruan Mei">
+        <h4>Ruan Mei</h4>
+        <p>Harmony</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/7/7e/Path_Harmony.png" alt="Ruan Mei">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/114133/5617ab3753df19be4bcd4586ee23c803_8693261561336512140.png" alt="Ruan Mei">
+      </div>
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/a/ab/Character_Lingsha_Icon.png" alt="Lingsha">
+        <h4>Lingsha</h4>
+        <p>Abundance</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/9/94/Path_Abundance.png" alt="Lingsha">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/127090/d70a3ccff4ec2e198aa18c7e824a37a7_2854421928088961642.png" alt="Lingsha">
+      </div>
+    </div>
+  </div>
+
+  <hr style="background-color: rgba(255,255,255,0.3); margin: 4rem 0;">
+
+  <div class="container text-center">
+    <h1><b>True Damage</b></h1>
+    <div class="row pt-4 gx-4 gy-4 justify-content-center">
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/8/89/Character_Trailblazer_%28Destruction%29_Icon.png" alt="Trailblazer">
+        <h4>Trailblazer</h4>
+        <p>Remembrance</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/2/2f/Path_Remembrance.png" alt="Trailblazer">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/114133/5617ab3753df19be4bcd4586ee23c803_8693261561336512140.png" alt="Trailblazer">
+      </div>
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/d/da/Character_Castorice_Icon.png" alt="Castorice">
+        <h4>Castorice</h4>
+        <p>Remembrance</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/2/2f/Path_Remembrance.png" alt="Castorice">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/155153/12b18c45e1ceece36448baa17a6c0174_490056311199183406.png" alt="Castorice">
+      </div>
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/f/f3/Character_Tribbie_Icon.png" alt="Tribbie">
+        <h4>Tribbie</h4>
+        <p>Harmony</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/7/7e/Path_Harmony.png" alt="Tribbie">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/155153/12b18c45e1ceece36448baa17a6c0174_490056311199183406.png" alt="Tribbie">
+      </div>
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/2/20/Character_Luocha_Icon.png" alt="Luocha">
+        <h4>Luocha</h4>
+        <p>Abundance</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/9/94/Path_Abundance.png" alt="Luocha">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/126410/e8f2d4eb8f601ce234c622eac5bd292e_9218430078378557320.png" alt="Luocha">
+      </div>
+    </div>
+  </div>
+
+  <hr style="background-color: rgba(255,255,255,0.3); margin: 4rem 0;">
+
+  <div class="container text-center">
+    <h1><b>Damage OverTime (DOT)</b></h1>
+    <div class="row pt-4 gx-4 gy-4 justify-content-center">
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/8/8c/Character_Kafka_Icon.png" alt="Kafka">
+        <h4>Kafka</h4>
+        <p>Nihility</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/4/45/Path_Nihility.png" alt="Kafka">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/125611/414155c014accfa8cfd68cb42383e170_2604334479753096203.png" alt="Kafka">
+      </div>
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/9/90/Character_Black_Swan_Icon.png" alt="Blackswan">
+        <h4>Blackswan</h4>
+        <p>Nihility</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/4/45/Path_Nihility.png" alt="Blackswan">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/155154/a42c3fb734a92d12f2835cedc049bba5_1018187432688605875.png" alt="Blackswan">
+      </div>
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/9/98/Character_Guinaifen_Icon.png" alt="Guinaifen">
+        <h4>Guinaifen</h4>
+        <p>Nihility</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/4/45/Path_Nihility.png" alt="Guinaifen">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/127090/d70a3ccff4ec2e198aa18c7e824a37a7_2854421928088961642.png" alt="Guinaifen">
+      </div>
+      <div class="col-md-3 text-center tim">
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/6/68/Character_Huohuo_Icon.png" alt="HuoHuo">
+        <h4>HuoHuo</h4>
+        <p>Abundance</p>
+        <img src="https://static.wikia.nocookie.net/houkai-star-rail/images/9/94/Path_Abundance.png" alt="HuoHuo">
+        <img src="https://fastcdn.hoyoverse.com/content-v2/hkrpg/155154/a42c3fb734a92d12f2835cedc049bba5_1018187432688605875.png" alt="HuoHuo">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container-fluid client pt-2 pb-3 bg-dark">
+        <div class="container text-center">
+          <div class="text-white" id="Download">
+            <h1>Download Now</h1>
+          </div>
+            <div class="row pt-4 gx-4 gy-4">
+                <div class="col">
+                  <a href="https://www.playstation.com/en-id/games/honkai-star-rail/">
+                    <img src="https://fastcdn.hoyoverse.com/mi18n/hkrpg_global/m20230605hy15aec7wg/upload/9612396d73c3bf504f53d87281cd04b8_3797138904074505609.png" >
+                    </a>
+                </div>
+
+                <div class="col">
+                  <a href="">
+                    <img src="https://fastcdn.hoyoverse.com/mi18n/hkrpg_global/m20230605hy15aec7wg/upload/d36f91c44cb215612d3e3e6ee44761bd_892487008795999554.png" >
+                    </a>
+                </div>
+
+                <div class="col">
+                  <a href="https://apps.apple.com/us/app/honkai-star-rail/id1599719154?pid=OPT_official+site&c=ios_download&is_retargeting=true&af_reengagement_window=lifetime">
+                    <img src="https://fastcdn.hoyoverse.com/mi18n/resource-trans/upload/event/2023/07/18/4c51a0fa1d4db9bf954aa740de1e3efa_3982331624468149693.png" >
+                    </a>
+                </div>
+
+                <div class="col">
+                  <a href="https://play.google.com/store/apps/details?id=com.HoYoverse.hkrpgoversea&pid=OPT_official+site&c=android_download&is_retargeting=true&af_reengagement_window=lifetime&pli=1">
+                    <img src="https://fastcdn.hoyoverse.com/mi18n/resource-trans/upload/event/2023/07/18/e5d815c7fbcf2a3786877ab4a0729425_3537088210003987623.png" >
+                    </a>
+                </div>
+
+                <div class="col">
+                  <a href="https://store.epicgames.com/en-US/p/honkai-star-rail">
+                    <img src="https://fastcdn.hoyoverse.com/mi18n/resource-trans/upload/event/2023/07/18/c2d9ce48502427520f07b56ac4f5c37b_1431080568157271405.png" >
+                    </a>
+                </div>
+            </div>
+        </div>
+     </div>
+  
+   <div class="container text-center pt-5 pb-5">
+        All Rights Reserved &copy; 2025
+    </div>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
